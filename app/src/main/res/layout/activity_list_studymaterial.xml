@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    tools:context=".ListStudymaterial">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbOfStudymaterialOfgate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:title="Study Material"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        android:layout_marginBottom="20dp"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="10dp"
+        android:id="@+id/cvMathsMaterial"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:cardBackgroundColor="@color/colorBackgroundCard"
+        android:layout_below="@+id/tbOfStudymaterialOfgate"
+        android:layout_marginTop="13dp"
+       app:cardElevation="5dp"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="7dp">
+
+            <ImageView
+                android:id="@+id/brLogo07"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/mathamatics" />
+
+            <TextView
+                android:id="@+id/brName07"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/brLogo07"
+                android:gravity="center"
+                android:textColor="@color/textcokorOncard"
+                android:text="Mathematics"
+                android:textSize="17dp" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvMechMaterial"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/cvMathsMaterial"
+        android:layout_marginTop="13dp"
+        app:cardElevation="5dp"
+        app:cardBackgroundColor="@color/colorBackgroundCard"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="7dp">
+
+            <ImageView
+                android:id="@+id/brLogo01"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/engineer" />
+
+            <TextView
+                android:id="@+id/brName01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/brLogo01"
+                android:gravity="center"
+                android:textColor="@color/textcokorOncard"
+                android:text="Mechanical"
+                android:textSize="17dp" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvElectronicStudymaterial"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/cvMechMaterial"
+        android:layout_marginTop="13dp"
+        app:cardElevation="5dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/colorBackgroundCard"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="7dp">
+
+            <ImageView
+                android:id="@+id/brLogo02"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/electronics" />
+
+            <TextView
+                android:id="@+id/brName02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/brLogo02"
+                android:gravity="center"
+                android:textColor="@color/textcokorOncard"
+                android:text="Electronic"
+                android:textSize="17dp" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvCSandITStudymaterial"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/cvElectronicStudymaterial"
+        android:layout_marginTop="13dp"
+       app:cardElevation="5dp"
+        app:cardBackgroundColor="@color/colorBackgroundCard"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="7dp">
+
+            <ImageView
+                android:id="@+id/brLogo03"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/csandit" />
+
+            <TextView
+                android:id="@+id/brName03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/brLogo03"
+                android:gravity="center"
+                android:textColor="@color/textcokorOncard"
+                android:text="Computer Sciencs And Information Technology(IT)"
+                android:textSize="17dp"/>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvChemicalStudymayewrial"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/cvCSandITStudymaterial"
+        android:layout_marginTop="13dp"
+        app:cardElevation="5dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/colorBackgroundCard"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="7dp">
+
+            <ImageView
+                android:id="@+id/brLogo04"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/chemical" />
+
+            <TextView
+                android:id="@+id/brName04"
+                android:textColor="@color/textcokorOncard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/brLogo04"
+                android:gravity="center"
+                android:text="Chemical"
+                android:textSize="17dp"/>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvElectricalStudymaterial"
+        android:layout_width="match_parent"
+        app:cardBackgroundColor="@color/colorBackgroundCard"
+        android:layout_height="60dp"
+        android:layout_below="@+id/cvChemicalStudymayewrial"
+        android:layout_marginTop="13dp"
+        app:cardElevation="5dp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="7dp">
+
+            <ImageView
+                android:id="@+id/brLogo05"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/eletrical" />
+
+            <TextView
+                android:id="@+id/brName05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/brLogo05"
+                android:gravity="center"
+                android:text="Electrial"
+                android:textColor="@color/textcokorOncard"
+                android:textSize="17dp" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvCivilStudymayewrial"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/cvElectricalStudymaterial"
+        android:layout_marginTop="13dp"
+        app:cardElevation="5dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/colorBackgroundCard"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="7dp">
+
+            <ImageView
+                android:id="@+id/brLogo06"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="8dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/architecture" />
+
+            <TextView
+                android:id="@+id/brName06"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/textcokorOncard"
+                android:layout_toRightOf="@+id/brLogo06"
+                android:gravity="center"
+                android:text="Civil"
+                android:textSize="17dp"/>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

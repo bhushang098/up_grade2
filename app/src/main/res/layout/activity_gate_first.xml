@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorAccent"
+    android:layout_height="match_parent"
+    tools:context=".GateActivityFirst">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorPrimary"
+                android:id="@+id/tbOfMAinGate"
+                app:title="Prepare For GATE"
+                android:layout_marginBottom="30dp"/>
+
+    <androidx.cardview.widget.CardView
+       android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/colorBackgroundCard"
+        android:layout_below="@id/tbOfMAinGate"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/cvSyllbusGate"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="6dp"
+        android:layout_marginTop="30dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgInCvGate"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="6dp"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:src="@drawable/gate_syllabus"
+                android:padding="5dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/imgInCvGate"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/textcokorOncard"
+                android:text="GATE Syllabus (All Branches)"
+                android:textSize="17sp"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="@color/colorBackgroundCard"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:id="@+id/cvStudyGate"
+        android:layout_below="@+id/cvSyllbusGate"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="6dp"
+        android:layout_marginTop="40dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgInCvGateStudy"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="13dp"
+                android:padding="5dp"
+                android:src="@drawable/contract" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/textcokorOncard"
+                android:layout_toRightOf="@+id/imgInCvGateStudy"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="Study Material"
+                android:textSize="17sp"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="@color/colorBackgroundCard"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:cardElevation="6dp"
+        android:layout_margin="10dp"
+        android:id="@+id/cvQPaperGate"
+        app:cardCornerRadius="10dp"
+        android:layout_below="@+id/cvStudyGate"
+        android:layout_marginTop="40dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgInCvGateQPaper"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="6dp"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:src="@drawable/quiz"
+                android:padding="5dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/textcokorOncard"
+                android:layout_toRightOf="@+id/imgInCvGateQPaper"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="Previous Year Question paper With Answer key"
+                android:textSize="17sp"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="@color/colorBackgroundCard"
+        android:layout_width="match_parent"
+        app:cardElevation="6dp"
+        android:layout_margin="10dp"
+        android:layout_height="100dp"
+        android:id="@+id/cvLinksGate"
+        android:layout_below="@id/cvQPaperGate"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="40dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgInCvGateLinks"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="6dp"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:src="@drawable/link"
+                android:padding="5dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/textcokorOncard"
+                android:layout_toRightOf="@+id/imgInCvGateLinks"
+               android:gravity="center"
+                android:textStyle="bold"
+                android:text="Other Useful Links "
+                android:textSize="17sp"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adViewgateFirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+    </com.google.android.gms.ads.AdView>
+
+
+
+</RelativeLayout>

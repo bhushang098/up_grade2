@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/colorPrimary"
+        android:textStyle="bold"
+        android:layout_marginTop="0dp"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:text="Login"/>
+
+    <EditText
+        android:id="@+id/etMailLogin"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorAccent"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/ic_action_name"
+        android:hint="    E Mail"
+        android:shadowRadius="@android:integer/config_longAnimTime"
+        app:layout_constraintCircleRadius="@android:dimen/app_icon_size" />
+
+    <EditText
+        android:id="@+id/etPassLogin"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etMailLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@color/colorAccent"
+        android:drawableLeft="@drawable/ic_action_pass"
+        android:hint="   PassWord"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:shadowRadius="@android:integer/config_longAnimTime"
+        app:layout_constraintCircleRadius="@android:dimen/app_icon_size" />
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/social" />
+
+
+        <Button
+            android:id="@+id/btnlogin"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/etPassLogin"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="72dp"
+            android:textColor="#ffffff"
+            android:background="@color/colorPrimary"
+            android:text="Login"
+            android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tvRegister"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnlogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:text="New user? Register" />
+
+    <TextView
+        android:id="@+id/tvforgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvRegister"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:textColor="#8BC0314E"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:text="Forgot Password ?"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">UpGrade</string>
+    <string name="pass_reset_help_message">Note :- check your email inBox After clicking get Mail Button and Follow the password Reset link have been send to you </string>
+    <string-array name="years">
+        <item>Year 2019</item>
+        <item>Year 2018</item>
+        <item>Year 2017</item>
+        <item>Year 2016</item>
+        <item>Year 2015</item>
+    </string-array>
+</resources>
