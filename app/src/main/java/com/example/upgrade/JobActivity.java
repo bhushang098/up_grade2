@@ -2,7 +2,6 @@ package com.example.upgrade;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -18,6 +17,7 @@ import com.example.upgrade.api.JobApiinterface;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -77,7 +77,7 @@ public class JobActivity extends AppCompatActivity {
         call.enqueue(new Callback<Jobs>() {
             @Override
             public void onResponse(Call<Jobs> call, Response<Jobs> response) {
-                JobPosts = response.body().getItems();
+                JobPosts = Objects.requireNonNull(response.body()).getItems();
                 progressBar.setVisibility(View.INVISIBLE);
                 recyclerView.setAdapter(new AdapterOfJob(JobPosts,JobActivity.this));
                 refreshLayout.setRefreshing(false);

@@ -1,93 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="0dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/pbOFLogin"
+        android:visibility="gone"/>
+
+
+    <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="@color/colorPrimary"
-        android:textStyle="bold"
-        android:layout_marginTop="0dp"
-        android:textColor="#ffffff"
-        android:textSize="20sp"
-        android:textAlignment="center"
-        android:text="Login"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/etMailLogin"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/img"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:background="@color/colorAccent"
-        android:inputType="textEmailAddress"
-        android:padding="10dp"
-        android:drawableLeft="@drawable/ic_action_name"
-        android:hint="    E Mail"
-        android:shadowRadius="@android:integer/config_longAnimTime"
-        app:layout_constraintCircleRadius="@android:dimen/app_icon_size" />
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/colorPrimary"
+                app:title="Login"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                android:id="@+id/tbOfLogin"/>
 
-    <EditText
-        android:id="@+id/etPassLogin"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/etMailLogin"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:background="@color/colorAccent"
-        android:drawableLeft="@drawable/ic_action_pass"
-        android:hint="   PassWord"
-        android:inputType="textPassword"
-        android:padding="10dp"
-        android:shadowRadius="@android:integer/config_longAnimTime"
-        app:layout_constraintCircleRadius="@android:dimen/app_icon_size" />
+            <EditText
+                android:id="@+id/etMailLogin"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@color/colorAccent"
+                android:drawableLeft="@drawable/ic_action_name"
+                android:hint="    E Mail"
+                android:inputType="textEmailAddress"
+                android:padding="10dp" />
 
-    <ImageView
-        android:id="@+id/img"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="70dp"
-        android:src="@drawable/social" />
+            <EditText
+                android:id="@+id/etPassLogin"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etMailLogin"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:background="@color/colorAccent"
+                android:drawableLeft="@drawable/ic_action_pass"
+                android:hint="   PassWord"
+                android:inputType="textPassword"
+                android:padding="10dp"/>
+
+            <CheckBox
+                android:layout_centerHorizontal="true"
+                android:layout_width="300dp"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/cbShowPAss"
+                android:layout_below="@id/etPassLogin"
+                android:text="showPassword"/>
+
+            <ImageView
+                android:layout_below="@+id/tbOfLogin"
+                android:id="@+id/img"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/social" />
+
+            <TextView
+                android:id="@+id/tvOr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnlogin"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:text="OR"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20dp" />
 
 
-        <Button
-            android:id="@+id/btnlogin"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/etPassLogin"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="72dp"
-            android:textColor="#ffffff"
-            android:background="@color/colorPrimary"
-            android:text="Login"
-            android:textSize="22sp" />
+            <TextView
+                android:id="@+id/tvRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvOr"
+                android:layout_centerHorizontal="true"
+                android:text="New User ?  Register"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tvRegister"
-        android:textColor="@color/colorPrimary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnlogin"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:text="New user? Register" />
+            <Button
+                android:id="@+id/btnlogin"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cbShowPAss"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@color/colorPrimary"
+                android:text="Login"
+                android:textColor="#ffffff"
+                android:textSize="22sp" />
 
-    <TextView
-        android:id="@+id/tvforgotPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvRegister"
-        android:textStyle="bold"
-        android:textSize="15dp"
-        android:textColor="#8BC0314E"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        android:text="Forgot Password ?"/>
 
+            <TextView
+                android:id="@+id/tvforgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etPassLogin"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/btnlogin"
+                android:padding="10dp"
+                android:text="     Forgot \n  Password ?"
+                android:textColor="#8BC0314E"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvGLogin"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/tvRegister"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="50dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/google_logo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"
+                        android:text="Sign Up With Google"
+                        android:textColor="#201E1E"
+                        android:textSize="20dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>

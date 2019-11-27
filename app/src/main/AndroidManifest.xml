@@ -2,23 +2,32 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.upgrade">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
-        <activity android:name=".StudyMaterialShowPdf"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ListLinksFromDB"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".StudyMaterialShowPdf"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ListStudymaterialFromDB"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".GetPaperPDFView" />
+        <activity
+            android:name=".GetPaperPDFView"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ListAsPerYear"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".JObDetails" />
+        <activity
+            android:name=".JObDetails"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".JobActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -40,11 +49,15 @@
         <activity
             android:name=".ListSyllabus"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".NewsActivity" />
+        <activity
+            android:name=".NewsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".NewsDetails"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ForgotPasswordActivity" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".GateActivityFirst"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -65,14 +78,14 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-6308730013109586~9609200473" />
+            android:value="ca-app-pub-6308730013109586~9609200473"/>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

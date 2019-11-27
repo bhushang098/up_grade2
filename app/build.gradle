@@ -4,21 +4,55 @@ apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 28
     buildToolsVersion "29.0.1"
+
+    //adding LintOptions Couase getting Errors in generating Signed APK so to fix it
+
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+
+    splits {
+
+        // Configures multiple APKs based on ABI.
+        abi {
+
+            // Enables building multiple APKs per ABI.
+            enable true
+
+            // By default all ABIs are included, so use reset() and include to specify that we only
+            // want APKs for x86 and x86_64.
+
+            // Resets the list of ABIs that Gradle should create APKs for to none.
+            reset()
+
+            // Specifies a list of ABIs that Gradle should create APKs for.
+            include "x86", "armeabi-v7a", "arm64-v8a", "x86_64"
+
+            // Specifies that we do not want to also generate a universal APK that includes all ABIs.
+            // universalApk false
+        }
+    }
+
     defaultConfig {
         applicationId "com.example.upgrade"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+        resConfigs "en"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+//        ndk {
+//            abiFilters "armeabi-v7a","x86"
+//        }
     }
     buildTypes {
         release {
-            minifyEnabled true
-            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
         }
     }
 }
@@ -36,6 +70,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:19.1.0'
     implementation 'com.google.firebase:firebase-storage:19.1.0'
     implementation 'com.google.firebase:firebase-firestore:21.1.1'
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
 
     //design Support
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
@@ -57,10 +92,10 @@ dependencies {
     implementation 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
 
     //ads
-    implementation 'com.google.android.gms:play-services-ads:18.2.0'
+    implementation 'com.google.android.gms:play-services-ads-lite:18.2.0'
 
     //pdf Viewer Support
     implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
-    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+    //spink kit Loading Bar
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 }

@@ -53,6 +53,8 @@ public class GateActivityFirst extends AppCompatActivity {
         cvLinks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(GateActivityFirst.this,ListLinksFromDB.class);
+                startActivity(i);
 
             }
         });

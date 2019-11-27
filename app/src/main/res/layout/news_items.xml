@@ -20,21 +20,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
             <ImageView
                 android:id="@+id/img"
-                android:transitionName="img"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerCrop"/>
-
-
-            <ImageView
-                android:id="@+id/shadow_bottom"
-                android:src="@drawable/bottom_shadow"
-                android:layout_alignBottom="@+id/img"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                />
+                android:layout_width="383dp"
+                android:layout_height="195dp"
+                android:scaleType="centerCrop"
+                android:transitionName="img" />
 
             <ProgressBar
                 android:id="@+id/progress_load_photo"
@@ -48,47 +40,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="30sp"
                 android:drawablePadding="10dp"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:text="Author"
-                android:gravity="bottom"
-                android:layout_alignLeft="@+id/title"
-                android:layout_alignStart="@+id/title"
-                android:layout_alignRight="@+id/layoutDate"
-                android:layout_alignTop="@+id/layoutDate"
-                android:layout_alignEnd="@+id/layoutDate" />
-
-            <FrameLayout
-                android:id="@+id/layoutDate"
-                android:layout_marginBottom="16sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/img"
-                android:background="@drawable/round_white"
-                android:padding="6sp"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="50sp"
-                >
-                <ImageView
-                    android:src="@drawable/ic_date"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"/>
+                android:layout_marginLeft="10dp"
+                android:gravity="bottom" />
 
                 <TextView
                     android:id="@+id/publishedAt"
-                    android:textColor="#606060"
-                    android:layout_marginLeft="27dp"
-                    android:layout_marginRight="10dp"
-                    android:text="01 january 1990"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </FrameLayout>
+                    android:padding="5dp"
+                    android:textSize="17dp"
+                    android:background="#ffffff"
+                    android:text="date"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/title"
@@ -137,6 +100,7 @@
                 android:layout_height="20sp"
                 android:layout_below="@+id/desc"
                 android:layout_marginTop="10sp"
+                android:layout_marginLeft="25dp"
                 android:layout_marginBottom="10sp"
                 android:layout_toRightOf="@+id/source"
                 android:maxLines="1"

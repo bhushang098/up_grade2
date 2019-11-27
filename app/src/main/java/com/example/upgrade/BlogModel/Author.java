@@ -15,9 +15,6 @@ public class Author {
     @SerializedName("url")
     @Expose
     private String url;
-    @SerializedName("image")
-    @Expose
-    private Image image;
 
     public String getId() {
         return id;
@@ -31,24 +28,12 @@ public class Author {
         return displayName;
     }
 
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
-    }
-
     public String getUrl() {
         return url;
     }
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    public Image getImage() {
-        return image;
-    }
-
-    public void setImage(Image image) {
-        this.image = image;
     }
 
 }

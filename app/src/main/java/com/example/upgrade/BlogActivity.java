@@ -1,14 +1,15 @@
 package com.example.upgrade;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ import com.example.upgrade.api.BlogApiInterface;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -63,7 +65,7 @@ public class BlogActivity extends AppCompatActivity {
         errorMessage = findViewById(R.id.errormessage);
         refreshLayout = findViewById(R.id.reflayoutBlog);
         errorlayout = findViewById(R.id.errorlayout);
-        progressBar = findViewById(R.id.pbOfBlogActivity);
+        progressBar = findViewById(R.id.pbOfGateUpdates);
         recyclerView = findViewById(R.id.recViewOfBlogActivity);
         toolbar = findViewById(R.id.tbOfBlogActivity);
     }
@@ -81,9 +83,10 @@ public class BlogActivity extends AppCompatActivity {
         Call<Blogs> call = apiInterface.getBlogPoste();
 
         call.enqueue(new Callback<Blogs>() {
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onResponse(Call<Blogs> call, Response<Blogs> response) {
-                blogPosts = response.body().getItems();
+                blogPosts = Objects.requireNonNull(response.body()).getItems();
                 progressBar.setVisibility(View.INVISIBLE);
                 recyclerView.setAdapter(new AdapterOfBlog(blogPosts,BlogActivity.this));
                 refreshLayout.setRefreshing(false);

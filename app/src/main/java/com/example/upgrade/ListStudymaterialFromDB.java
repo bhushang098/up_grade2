@@ -3,6 +3,8 @@ package com.example.upgrade;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -22,6 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ListStudymaterialFromDB extends AppCompatActivity implements SearchView.OnQueryTextListener{
 
@@ -29,6 +32,7 @@ public class ListStudymaterialFromDB extends AppCompatActivity implements Search
     RecyclerView recyclerView;
     ArrayList<pdfList> arrayList = new ArrayList<>();
     AdapterOfListStudymaterial myAdapter;
+    ProgressBar progressBar;
     String branch;
     Toolbar toolbar;
 
@@ -40,6 +44,8 @@ public class ListStudymaterialFromDB extends AppCompatActivity implements Search
         //Assigning Intent got Through ListStudyMaterial.class in Branch
         branch = getIntent().getStringExtra("branchName");
         toolbar = findViewById(R.id.tbOfsimpleList);
+        progressBar = findViewById(R.id.pbOfListStudyFromDB);
+        progressBar.setVisibility(View.VISIBLE);
         setSupportActionBar(toolbar);
         toolbar.setTitle(branch);
         setRecview();
@@ -58,7 +64,7 @@ public class ListStudymaterialFromDB extends AppCompatActivity implements Search
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        for (DocumentSnapshot documentSnapshot: task.getResult()){
+                        for (DocumentSnapshot documentSnapshot: Objects.requireNonNull(task.getResult())){
 
                             pdfList list = new pdfList(documentSnapshot.getString("Name")
                                     ,documentSnapshot.getString("Link"));
@@ -66,10 +72,12 @@ public class ListStudymaterialFromDB extends AppCompatActivity implements Search
                         }
                         myAdapter = new AdapterOfListStudymaterial(ListStudymaterialFromDB.this,arrayList);
                         recyclerView.setAdapter(myAdapter);
+                        progressBar.setVisibility(View.INVISIBLE);
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
+                progressBar.setVisibility(View.INVISIBLE);
                 Toast.makeText(ListStudymaterialFromDB.this,"Error__>>>",Toast.LENGTH_SHORT).show();
             }
         });
@@ -103,6 +111,7 @@ public class ListStudymaterialFromDB extends AppCompatActivity implements Search
     public boolean onQueryTextChange(String newText) {
 
         newText = newText.toLowerCase();
+        progressBar.setVisibility(View.VISIBLE);
 
         ArrayList<pdfList> newList = new ArrayList<>();
         for (pdfList material : arrayList)
@@ -113,6 +122,7 @@ public class ListStudymaterialFromDB extends AppCompatActivity implements Search
             }
         }
         myAdapter.setFilter(newList);
+        progressBar.setVisibility(View.INVISIBLE);
         return true;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.upgrade;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -17,11 +18,15 @@ public class JObDetails extends AppCompatActivity {
 
     WebView webView;
     ProgressBar progressBar;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_details);
+        toolbar = (Toolbar)findViewById(R.id.tbOfJObDetails);
+        toolbar.setTitle("JOb Details");
+        setSupportActionBar(toolbar);
 
         progressBar = findViewById(R.id.pbOfJobDetails);
         CubeGrid cubeGrid = new CubeGrid();
@@ -61,5 +66,13 @@ public class JObDetails extends AppCompatActivity {
                 super.onPageFinished(view, url);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack())
+            webView.goBack();
+        else
+        super.onBackPressed();
     }
 }

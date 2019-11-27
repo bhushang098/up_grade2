@@ -37,6 +37,7 @@ public class AdapterOfNews extends RecyclerView.Adapter<AdapterOfNews.MyNewsView
     @Override
     public MyNewsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+
         View view = inflater.inflate(R.layout.news_items,parent,false);
         return new MyNewsViewHolder(view);
     }
@@ -45,7 +46,7 @@ public class AdapterOfNews extends RecyclerView.Adapter<AdapterOfNews.MyNewsView
     public void onBindViewHolder(@NonNull final MyNewsViewHolder holder, final int position) {
 
         holder.title.setText(articles.get(position).getTitle());
-        holder.author.setText(articles.get(position).getAuthor());
+       // holder.author.setText(articles.get(position).getAuthor());
         holder.desc.setText(articles.get(position).getDescription());
         holder.time.setText(Utils.DateFormat(articles.get(position).getPublishedAt()));
         holder.publishedAt.setText(Utils.DateFormat(articles.get(position).getPublishedAt()));

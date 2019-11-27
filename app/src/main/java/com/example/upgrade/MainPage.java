@@ -1,28 +1,29 @@
 package com.example.upgrade;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainPage extends AppCompatActivity {
 
     Toolbar toolbar;
-
-    CardView newsCard,blogCard,gateCard,kycCard;
+    private FirebaseAuth firebaseAuth;
+    CardView newsCard, blogCard, gateCard, kycCard;
+    GoogleSignInClient mGoogleSignInClient;
 
     private AdView mAdView;
 
@@ -41,7 +42,7 @@ public class MainPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 newsCard.animate();
-                Intent i = new Intent(MainPage.this,NewsActivity.class);
+                Intent i = new Intent(MainPage.this, NewsActivity.class);
                 startActivity(i);
             }
         });
@@ -49,7 +50,7 @@ public class MainPage extends AppCompatActivity {
         blogCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainPage.this,BlogActivity.class);
+                Intent i = new Intent(MainPage.this, BlogActivity.class);
                 startActivity(i);
             }
         });
@@ -57,7 +58,7 @@ public class MainPage extends AppCompatActivity {
         gateCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainPage.this,GateActivityFirst.class);
+                Intent i = new Intent(MainPage.this, GateActivityFirst.class);
                 startActivity(i);
             }
         });
@@ -65,7 +66,7 @@ public class MainPage extends AppCompatActivity {
         kycCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainPage.this,JobActivity.class);
+                Intent i = new Intent(MainPage.this, JobActivity.class);
                 startActivity(i);
             }
         });
@@ -85,14 +86,14 @@ public class MainPage extends AppCompatActivity {
 
         switch (id) {
             case R.id.aboutApp:
-                Intent i1 = new Intent(MainPage.this,WebPage.class);
-                i1.putExtra("url","https://02aboutbhushan.blogspot.com/2019/09/about-upgrade-application.html");
+                Intent i1 = new Intent(MainPage.this, WebPage.class);
+                i1.putExtra("url", "https://02aboutbhushan.blogspot.com/2019/09/about-upgrade-application.html");
                 startActivity(i1);
                 break;
 
             case R.id.ContactInfo:
-                Intent i2 = new Intent(MainPage.this,WebPage.class);
-                i2.putExtra("url","https://02aboutbhushan.blogspot.com/2019/09/contact-info.html");
+                Intent i2 = new Intent(MainPage.this, WebPage.class);
+                i2.putExtra("url", "https://02aboutbhushan.blogspot.com/2019/09/contact-info.html");
                 startActivity(i2);
                 break;
 
@@ -101,39 +102,35 @@ public class MainPage extends AppCompatActivity {
                 i.setType("text/plain");
                 String shareBody = "your Body here";
                 String shareSub = "Your Sub here";
-                i.putExtra(i.EXTRA_SUBJECT,shareBody);
-                i.putExtra(i.EXTRA_TEXT,shareBody);
-                startActivity(Intent.createChooser(i,"share App Using"));
+                i.putExtra(Intent.EXTRA_SUBJECT, shareBody);
+                i.putExtra(Intent.EXTRA_TEXT, shareBody);
+                startActivity(Intent.createChooser(i, "share App Using"));
                 break;
             case R.id.logOutLink:
-               logOutApp();
+                logOutApp();
                 break;
         }
         return true;
     }
 
     private void logOutApp() {
-
-        FirebaseAuth firebaseAuth;
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseAuth.signOut();
         finish();
-        Intent i = new Intent(MainPage.this,LoginActivity.class);
+        Intent i = new Intent(MainPage.this, LoginActivity.class);
         startActivity(i);
     }
 
-    private void setUpUI()
-    {
+    private void setUpUI() {
         toolbar = findViewById(R.id.toolbarMainPage);
         gateCard = findViewById(R.id.gateCard);
         kycCard = findViewById(R.id.kycCard);
         newsCard = findViewById(R.id.newsCard);
         blogCard = findViewById(R.id.blogCard);
-        mAdView = findViewById(R.id.adView);
+        mAdView = findViewById(R.id.adViewmainPage);
     }
 
-    private void implemantAdds()
-    {
+    private void implemantAdds() {
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
@@ -142,5 +139,11 @@ public class MainPage extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+        super.onBackPressed();
     }
 }

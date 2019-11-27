@@ -29,6 +29,7 @@ import java.util.List;
 
 public class AdapterOfBlog extends RecyclerView.Adapter<AdapterOfBlog.BlogViewHolder> {
 
+    //List Of Items
     private List<Item> items;
     private Context context;
 
@@ -51,9 +52,9 @@ public class AdapterOfBlog extends RecyclerView.Adapter<AdapterOfBlog.BlogViewHo
 
         holder.autherOfBlog.setText(items.get(position).getAuthor().getDisplayName());
         holder.titleOfBlog.setText(items.get(position).getTitle());
+        holder.blogdatepublishedAt.setText(items.get(position).getPublished());
         holder.blogdatepublishedAt.setText(Utils.DateFormat(items.get(position).getPublished()));
-        Document document = Jsoup.parse(items.get(position).getContent());
-
+       Document document = Jsoup.parse(items.get(position).getContent());
         Elements elements = document.select("img");
         Glide.with(context).load(elements.attr("src")).listener(new RequestListener<Drawable>() {
             @Override
@@ -77,7 +78,6 @@ public class AdapterOfBlog extends RecyclerView.Adapter<AdapterOfBlog.BlogViewHo
                 context.startActivity(i);
             }
         });
-
     }
 
     @Override

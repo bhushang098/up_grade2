@@ -56,11 +56,11 @@ public class Article {
     }
 
     public SourceNews getSource() {
-        return (SourceNews) source;
+        return source;
     }
 
     public void setSource(SourceNews source) {
-        this.source = (SourceNews) source;
+        this.source = source;
     }
 
     public String getAuthor() {

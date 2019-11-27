@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_margin="7dp"
+    android:background="@color/colorAccent">
+    <TextView
+        android:id="@+id/tvLinkNameFromDB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#F2061B7E"
+        android:text="Test Text"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textSize="14dp"/>
+
+</RelativeLayout>

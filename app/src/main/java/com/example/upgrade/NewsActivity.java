@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -26,6 +25,7 @@ import com.example.upgrade.models.News;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -36,9 +36,8 @@ public class NewsActivity extends AppCompatActivity {
     public static final String API_Kay = "1359e8fa588942cd9c4d7b416f85fe0a";
 
     private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
+    Toolbar toolbar;
     private List<Article> articles = new ArrayList<>();
-    private AdapterOfNews adapter;
     private String TAG = MainActivity.class.getSimpleName();
     private SwipeRefreshLayout refreshLayout;
     private TextView erroeTitle;
@@ -51,6 +50,7 @@ public class NewsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
         setUI();
+        setSupportActionBar(toolbar);
         refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -65,7 +65,7 @@ public class NewsActivity extends AppCompatActivity {
         errorlayout.setVisibility(View.GONE);
 
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
-        String country = Utils.getCountry();
+        String country = "in";
 
         Call<News> call;
 
@@ -81,11 +81,10 @@ public class NewsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<News> call, Response<News> response) {
 
-                articles = response.body().getArticles();
+                articles = (response.body()).getArticles();
                 recyclerView.setLayoutManager(new LinearLayoutManager(NewsActivity.this));
                 recyclerView.setAdapter(new AdapterOfNews(articles,NewsActivity.this));
                 refreshLayout.setRefreshing(false);
-
             }
 
             @Override
@@ -102,12 +101,11 @@ public class NewsActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.news_menu,menu);
 
-        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
 
         MenuItem menuItem = menu.findItem(R.id.action_search);
 
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+       // searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         searchView.setQueryHint("Search news Worldwide");
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -124,12 +122,13 @@ public class NewsActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
+                String query = newText.toLowerCase().trim();
                 refreshLayout.setRefreshing(false);
-                loadJSON(newText);
+                loadJSON(query);
                 return false;
             }
         });
-        menuItem.getIcon().setVisible(false,false);
+        //menuItem.getIcon().setVisible(false,false);
         return true;
     }
     private void setUI()
@@ -140,6 +139,7 @@ public class NewsActivity extends AppCompatActivity {
         errorlayout = findViewById(R.id.errorlayout);
         progressBar = findViewById(R.id.pbOfNEwsActivity);
         recyclerView = findViewById(R.id.recViewNewsActivity);
+        toolbar = findViewById(R.id.tbOfNewsActivity);
     }
 
     private void showError(String title ,String message,ProgressBar pogBar)

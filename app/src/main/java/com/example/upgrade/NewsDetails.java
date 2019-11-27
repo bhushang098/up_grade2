@@ -3,24 +3,15 @@ package com.example.upgrade;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.app.SearchManager;
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.SearchView;
-import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.github.ybq.android.spinkit.style.CubeGrid;
 
 public class NewsDetails extends AppCompatActivity {

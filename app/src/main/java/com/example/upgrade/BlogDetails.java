@@ -19,6 +19,14 @@ public class BlogDetails extends AppCompatActivity {
     ProgressBar progressBar;
 
     @Override
+    public void onBackPressed() {
+        if (webView.canGoBack())
+            webView.goBack();
+        else
+        super.onBackPressed();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blog_details);
@@ -61,6 +69,5 @@ public class BlogDetails extends AppCompatActivity {
                 super.onPageFinished(view, url);
             }
         });
-
     }
 }

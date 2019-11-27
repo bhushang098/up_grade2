@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +16,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -26,11 +24,14 @@ public class RegistrationActivity extends AppCompatActivity {
     private TextView goLogin;
     private FirebaseAuth firebaseAuth;
     ProgressDialog progressDialog;
+    NetworkOperation checkNet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+
+        checkNet = new NetworkOperation();
 
         setupUi(); //This method will Find All the widges And Assign To Variabels
 
@@ -49,29 +50,33 @@ public class RegistrationActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (validate()) {
-                    String user_Email = userEmail.getText().toString().trim();
-                    String password = userPass.getText().toString().trim();
+                    if (checkNet.checknetConnection(RegistrationActivity.this))
+                    {
+                        String user_Email = userEmail.getText().toString().trim();
+                        String password = userPass.getText().toString().trim();
 
-                    progressDialog = new ProgressDialog(RegistrationActivity.this);
-                    progressDialog.setTitle("Registering");
-                    progressDialog.setMessage("Checking Details....");
-                    progressDialog.show();
+                        progressDialog = new ProgressDialog(RegistrationActivity.this);
+                        progressDialog.setTitle("Registering");
+                        progressDialog.setMessage("Checking Details....");
+                        progressDialog.show();
 
-                    firebaseAuth.createUserWithEmailAndPassword(user_Email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        firebaseAuth.createUserWithEmailAndPassword(user_Email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
 
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                progressDialog.hide();
-                                Toast.makeText(RegistrationActivity.this, "Registration Succesfull...Now LogIn", Toast.LENGTH_LONG).show();
-                                Intent i = new Intent(RegistrationActivity.this,LoginActivity.class);
-                                startActivity(i);
-                            }else {
-                                progressDialog.hide();
-                                Toast.makeText(RegistrationActivity.this, "Error Occured", Toast.LENGTH_SHORT).show();
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    progressDialog.hide();
+                                    Toast.makeText(RegistrationActivity.this, "Registration Succesfull...Now LogIn", Toast.LENGTH_LONG).show();
+                                    Intent i = new Intent(RegistrationActivity.this,LoginActivity.class);
+                                    startActivity(i);
+                                }else {
+                                    progressDialog.hide();
+                                    Toast.makeText(RegistrationActivity.this, "Error Occured", Toast.LENGTH_SHORT).show();
+                                }
                             }
-                        }
-                    });
+                        });
+                    }else
+                        Toast.makeText(RegistrationActivity.this, "Check Internet Connection", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -90,7 +95,6 @@ public class RegistrationActivity extends AppCompatActivity {
             result = true;
         }
         return result;
-
     }
 
     public void setupUi() {

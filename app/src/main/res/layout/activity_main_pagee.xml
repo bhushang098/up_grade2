@@ -30,18 +30,18 @@
                     app:title="UpGrade"/>
 
                 <TextView
+                    android:id="@+id/tvQuote"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:id="@+id/tvQuote"
-                    android:textColor="#000000"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginTop="20dp"
-                    android:textStyle="bold"
-                    android:fontFamily="sans-serif-smallcaps"
                     android:layout_below="@+id/imgMain"
+                    android:layout_marginTop="33dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:gravity="center"
                     android:text="UpGrade Designed For Simplicity"
-                    android:textSize="20sp"/>
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:id="@+id/imgMain"
@@ -59,13 +59,15 @@
                     android:layout_below="@+id/kycCard"
                     android:layout_alignParentBottom="true"
                     android:gravity="center">
+
                     <com.google.android.gms.ads.AdView
-                        android:id="@+id/adView"
+                        android:id="@+id/adViewmainPage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="0dp"
                         app:adSize="BANNER"
-                        app:adUnitId="ca-app-pub-3940256099942544/6300978111"/>
+                        app:adUnitId=" 	ca-app-pub-3940256099942544/6300978111"/>
 
                 </RelativeLayout>
 
@@ -231,7 +233,9 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
             </RelativeLayout>
 
     </ScrollView>
+
 </RelativeLayout>

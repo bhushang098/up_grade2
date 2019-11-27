@@ -5,15 +5,12 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.upgrade.GetPaperPDFView;
-import com.example.upgrade.GetSyllabus;
 import com.example.upgrade.R;
 
 import java.util.ArrayList;
@@ -70,7 +67,7 @@ public class PdfAbapter extends RecyclerView.Adapter<PdfAbapter.PdfViewHolderFor
 
     class PdfViewHolderForpapers extends RecyclerView.ViewHolder{
 
-        TextView pdfpaperNbame;;
+        TextView pdfpaperNbame;
 
         public PdfViewHolderForpapers(@NonNull View itemView) {
             super(itemView);

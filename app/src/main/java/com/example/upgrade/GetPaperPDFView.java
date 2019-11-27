@@ -1,12 +1,20 @@
 package com.example.upgrade;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.graphics.Rect;
+import android.graphics.pdf.PdfRenderer;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.ParcelFileDescriptor;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.github.barteksc.pdfviewer.PDFView;
@@ -23,6 +31,7 @@ public class GetPaperPDFView extends AppCompatActivity {
     private String My_pdf = "my_pdf.pdf";
     String year;
     private PDFView pdfView;
+    ImageView img;
     ProgressDialog progressDialog;
 
     @Override
@@ -60,7 +69,7 @@ public class GetPaperPDFView extends AppCompatActivity {
                         URLConnection connection = u.openConnection();
                         int contentlength = connection.getContentLength();
                         BufferedInputStream input = new BufferedInputStream(u.openStream());
-                        byte data[] = new byte[contentlength];
+                        byte[] data = new byte[contentlength];
                         long total = 0;
                         int count;
                         while ((count = input.read(data)) != -1) {
@@ -82,6 +91,7 @@ public class GetPaperPDFView extends AppCompatActivity {
                 return false;
             }
 
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             protected void onPostExecute(Boolean aBoolean) {
                 super.onPostExecute(aBoolean);
@@ -108,4 +118,5 @@ public class GetPaperPDFView extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
 }

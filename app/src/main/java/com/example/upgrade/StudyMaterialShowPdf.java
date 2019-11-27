@@ -58,7 +58,7 @@ public class StudyMaterialShowPdf extends AppCompatActivity {
                         URLConnection connection = u.openConnection();
                         int contentlength = connection.getContentLength();
                         BufferedInputStream input = new BufferedInputStream(u.openStream());
-                        byte data[] = new byte[contentlength];
+                        byte[] data = new byte[contentlength];
                         long total = 0;
                         int count;
                         while ((count = input.read(data)) != -1) {

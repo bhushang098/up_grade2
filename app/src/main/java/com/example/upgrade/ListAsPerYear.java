@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -39,6 +40,7 @@ public class ListAsPerYear extends AppCompatActivity implements SearchView.OnQue
     ArrayList<pdfList> arrayList = new ArrayList<>();
     PdfAbapter myAdapter;
     String year;
+    ProgressBar progressBar;
     Toolbar toolbar;
     Spinner spinner;
 
@@ -51,6 +53,7 @@ public class ListAsPerYear extends AppCompatActivity implements SearchView.OnQue
 
         setUi();
         setRecview();
+        progressBar.setVisibility(View.VISIBLE);
         setFb();
         setSupportActionBar(toolbar);
 
@@ -99,7 +102,7 @@ public class ListAsPerYear extends AppCompatActivity implements SearchView.OnQue
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        for (DocumentSnapshot documentSnapshot : task.getResult()) {
+                        for (DocumentSnapshot documentSnapshot : Objects.requireNonNull(task.getResult())) {
 
                             pdfList list = new pdfList(documentSnapshot.getString("Name")
                                     , documentSnapshot.getString("Link"));
@@ -107,10 +110,12 @@ public class ListAsPerYear extends AppCompatActivity implements SearchView.OnQue
                         }
                         myAdapter = new PdfAbapter(ListAsPerYear.this, arrayList, year);
                         recyclerView.setAdapter(myAdapter);
+                        progressBar.setVisibility(View.INVISIBLE);
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
+                progressBar.setVisibility(View.INVISIBLE);
                 Toast.makeText(ListAsPerYear.this, "Error__>>>", Toast.LENGTH_SHORT).show();
             }
         });
@@ -160,5 +165,6 @@ public class ListAsPerYear extends AppCompatActivity implements SearchView.OnQue
     private void setUi() {
         toolbar = findViewById(R.id.tbOfListpaper);
         spinner = findViewById(R.id.spnOfTb);
+        progressBar = findViewById(R.id.pbOfListAsPerYear);
     }
 }

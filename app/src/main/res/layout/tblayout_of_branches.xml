@@ -8,5 +8,4 @@
     app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     android:id="@+id/tbofbrlayout">
 
-
 </androidx.appcompat.widget.Toolbar>

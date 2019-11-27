@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
@@ -38,10 +40,12 @@ public class AdapterOfBranches extends RecyclerView.Adapter<AdapterOfBranches.My
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context,GetSyllabus.class);
-                i.putExtra("urlodbrsyllabus",arrayList.get(position).getUrl());
-                i.putExtra("brName",arrayList.get(position).getBrName().toLowerCase().trim());
-                context.startActivity(i);
+                {
+                    Intent i = new Intent(context,GetSyllabus.class);
+                    i.putExtra("urlodbrsyllabus",arrayList.get(position).getUrl());
+                    i.putExtra("brName",arrayList.get(position).getBrName().toLowerCase().trim());
+                    context.startActivity(i);
+                }
             }
         });
     }

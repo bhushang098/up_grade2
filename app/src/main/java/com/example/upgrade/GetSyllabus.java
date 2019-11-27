@@ -26,6 +26,7 @@ public class GetSyllabus extends AppCompatActivity {
     private PDFView pdfView;
     ProgressDialog progressDialog;
     FloatingActionButton actionButton;
+    NetworkOperation checkNet;
 
 
     @Override
@@ -33,6 +34,7 @@ public class GetSyllabus extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_syllabus);
         pdfView = findViewById(R.id.pdfView);
+        checkNet = new NetworkOperation();
         actionButton = findViewById(R.id.fabpdfdownloadsyllabus);
 
         PDF_Link = getIntent().getStringExtra("urlodbrsyllabus");
@@ -52,8 +54,8 @@ public class GetSyllabus extends AppCompatActivity {
                 i.setType("text/plain");
                 String shareBody = "Nothing";
                 String shareSub = "Share The PDF";
-                i.putExtra(i.EXTRA_SUBJECT,shareBody);
-                i.putExtra(i.EXTRA_TEXT,shareBody);
+                i.putExtra(Intent.EXTRA_SUBJECT,shareBody);
+                i.putExtra(Intent.EXTRA_TEXT,shareBody);
                 startActivity(Intent.createChooser(i,"share PDF Using"));
             }
         });
@@ -71,28 +73,28 @@ public class GetSyllabus extends AppCompatActivity {
                     File file = getFileStreamPath(fileName);
                     if (file.exists())
                         return true;
-                    try {
-                        FileOutputStream fileOutputStream = openFileOutput(fileName, Context.MODE_PRIVATE);
-                        URL u = new URL(PDF_Link);
-                        URLConnection connection = u.openConnection();
-                        int contentlength = connection.getContentLength();
-                        BufferedInputStream input = new BufferedInputStream(u.openStream());
-                        byte data[] = new byte[contentlength];
-                        long total = 0;
-                        int count;
-                        while ((count = input.read(data)) != -1) {
-                            total += count;
-                            fileOutputStream.write(data, 0, count);
+                        try {
+                            FileOutputStream fileOutputStream = openFileOutput(fileName, Context.MODE_PRIVATE);
+                            URL u = new URL(PDF_Link);
+                            URLConnection connection = u.openConnection();
+                            int contentlength = connection.getContentLength();
+                            BufferedInputStream input = new BufferedInputStream(u.openStream());
+                            byte[] data = new byte[contentlength];
+                            long total = 0;
+                            int count;
+                            while ((count = input.read(data)) != -1) {
+                                total += count;
+                                fileOutputStream.write(data, 0, count);
+                            }
+                            fileOutputStream.flush();
+                            fileOutputStream.close();
+                            input.close();
+                            return true;
                         }
-                        fileOutputStream.flush();
-                        fileOutputStream.close();
-                        input.close();
-                        return true;
-
-                    } catch (final Exception e) {
-                        e.printStackTrace();
-                        return false;
-                    }
+                        catch (final Exception e) {
+                            e.printStackTrace();
+                            return false;
+                        }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

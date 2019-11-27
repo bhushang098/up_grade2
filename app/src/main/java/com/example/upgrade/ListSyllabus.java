@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class ListSyllabus extends AppCompatActivity implements SearchView.OnQueryTextListener{
 
     public String[] brNames = {"General Aptitude(GA)","Aerospace Engineering (AE)","Agricultural Engineering(AG)","Architecture and Planning (AR)","Biotechnology (BT)"
-            ,"Civil Engineering(CE)","Chemical Engineering(CH)","Computer Science and Information Technology(CS)","Chemistry(CY)","Electronics And Communication Engineering(EC)",
+            ,"Civil Engineering(CE)","Chemical Engineering(CH)","Computer Science and Information Technology(CS) IT ","Chemistry(CY)","Electronics And Communication Engineering(EC)",
             "Electrical Engineering (EE)","Ecology and Evolution(EY)","Geology and Geophysics(GG)","Instrumentation Engineering (IN)","Mathematics(MA)",
             "Mechanical Engineering (ME)","Mining Engineering (MN)","Metallurgical Engineering (MT)","Petroleum Engineering (PE)","Physics(PH)",
             "Production and Industrial Engineering (PI)","Textile Engineering and Fiber Science (TF)","Mathematical Engineering (ME)","Fluid Mechanics(XE-B)","Materials Science (XE-c)",
