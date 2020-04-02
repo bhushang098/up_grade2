@@ -3,18 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GetLinksDetails"
+    tools:context="my.upgrade007.upgrade.GetLinksDetails"
     android:background="@color/colorPrimary">
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/pbOfLinksDetails"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refreshlayOfLinkDetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <WebView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/wvOfLinksDetails"/>
 
-    <ProgressBar
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_centerInParent="true"
-        android:id="@+id/pbOfLinksDetails"/>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </RelativeLayout>

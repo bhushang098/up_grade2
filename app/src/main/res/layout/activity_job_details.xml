@@ -3,11 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BlogDetails"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="my.upgrade007.upgrade.BlogDetails"
     android:background="@color/colorPrimary">
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:titleTextColor="#ffffff"
         android:id="@+id/tbOfJObDetails"/>
 
     <WebView

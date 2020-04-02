@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListAsPerYear">
+    tools:context="my.upgrade007.upgrade.ListAsPerYear">
 
     <ProgressBar
         android:layout_width="match_parent"
@@ -35,5 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/tbOfListpaper" />
+
+    <include layout="@layout/no_search_results"/>
 
 </RelativeLayout>

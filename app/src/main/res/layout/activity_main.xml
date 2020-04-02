@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context="my.upgrade007.upgrade.MainActivity"
    android:background="@color/colorAccent">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="366dp"
-        android:layout_height="192dp"
-        android:layout_marginBottom="304dp"
-        android:contentDescription="TODO"
-        android:src="@drawable/engg_hat_png"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:id="@+id/imageView"
+    android:layout_width="366dp"
+    android:layout_height="192dp"
+    android:layout_marginBottom="304dp"
+    android:contentDescription="TODO"
+    android:src="@drawable/engg_hat_png"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.644"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"

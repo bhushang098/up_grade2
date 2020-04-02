@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@color/colorAccent"
     android:layout_height="match_parent"
-    tools:context=".GateActivityFirst">
+    tools:context="my.upgrade007.upgrade.GateActivityFirst">
 
 
     <ScrollView
@@ -176,7 +176,7 @@
                 android:layout_toRightOf="@+id/imgInCvGateLinks"
                android:gravity="center"
                 android:textStyle="bold"
-                android:text="Other Useful Links "
+                android:text="Know About GATE"
                 android:textSize="17sp"/>
 
         </RelativeLayout>
@@ -195,7 +195,7 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
-        ads:adUnitId=" 	ca-app-pub-3940256099942544/6300978111">
+        ads:adUnitId="ca-app-pub-6308730013109586/4266525838">
     </com.google.android.gms.ads.AdView>
 
 

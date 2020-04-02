@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context=".ListStudymaterial">
+    tools:context="my.upgrade007.upgrade.ListStudymaterial">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -136,7 +136,7 @@
                 android:layout_toRightOf="@+id/brLogo02"
                 android:gravity="center"
                 android:textColor="@color/textcokorOncard"
-                android:text="Electronic"
+                android:text="Electronics and Communication"
                 android:textSize="17dp" />
         </RelativeLayout>
 
@@ -252,7 +252,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@+id/brLogo05"
                 android:gravity="center"
-                android:text="Electrial"
+                android:text="Electrical"
                 android:textColor="@color/textcokorOncard"
                 android:textSize="17dp" />
         </RelativeLayout>

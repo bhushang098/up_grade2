@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="my.upgrade007.upgrade.GetPaperPDFView">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_share_black_24dp"
+        android:id="@+id/fabOfDownloadedfiles"
+        android:layout_margin="10dp"
+        android:layout_alignParentRight="true"/>
+
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/pbOfShowDownFile"
+        android:layout_centerInParent="true"/>
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/pdfViewDownloadedFiles"/>
+
+
+</RelativeLayout>

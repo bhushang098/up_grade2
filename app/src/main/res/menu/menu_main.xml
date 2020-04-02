@@ -23,4 +23,10 @@
         android:orderInCategory="100"
         android:title="Logout" />
 
+    <item
+        android:id="@+id/reference_credits"
+        android:orderInCategory="100"
+        android:title="References And Credits" />
+
+
 </menu>

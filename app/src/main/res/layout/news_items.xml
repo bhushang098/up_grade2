@@ -26,6 +26,7 @@
                 android:layout_width="383dp"
                 android:layout_height="195dp"
                 android:scaleType="centerCrop"
+                android:src="@drawable/default_news_image"
                 android:transitionName="img" />
 
             <ProgressBar

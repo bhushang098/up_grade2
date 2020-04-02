@@ -8,7 +8,7 @@
     android:orientation="horizontal"
     android:background="@color/colorAccent"
     android:theme="@style/ThemeOverlay.AppCompat.Light"
-    tools:context=".MainPage">
+    tools:context="my.upgrade007.upgrade.MainPage">
 
 
 
@@ -67,7 +67,7 @@
                         android:layout_alignParentBottom="true"
                         android:layout_marginBottom="0dp"
                         app:adSize="BANNER"
-                        app:adUnitId=" 	ca-app-pub-3940256099942544/6300978111"/>
+                        app:adUnitId="ca-app-pub-6308730013109586/9985794368"/>
 
                 </RelativeLayout>
 

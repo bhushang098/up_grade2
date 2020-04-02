@@ -1,91 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.upgrade">
-
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
+        android:icon="@drawable/upgrade_logo_final"
         android:label="@string/app_name"
+        android:usesCleartextTraffic="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListLinksFromDB"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name="my.upgrade007.upgrade.OpenDownloadedFiles"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".StudyMaterialShowPdf"
+            android:name="my.upgrade007.upgrade.DownloadesFiles"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ListStudymaterialFromDB"
+            android:name="my.upgrade007.upgrade.ListLinksFromDB"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".GetPaperPDFView"
+            android:name="my.upgrade007.upgrade.StudyMaterialShowPdf"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ListAsPerYear"
+            android:name="my.upgrade007.upgrade.ListStudymaterialFromDB"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".JObDetails"
+            android:name="my.upgrade007.upgrade.GetPaperPDFView"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".JobActivity"
+            android:name="my.upgrade007.upgrade.ListAsPerYear"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".WebPage"
+            android:name="my.upgrade007.upgrade.JObDetails"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".BlogDetails"
+            android:name="my.upgrade007.upgrade.JobActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".GetLinksDetails"
+            android:name="my.upgrade007.upgrade.WebPage"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".GetSyllabus"
+            android:name="my.upgrade007.upgrade.BlogDetails"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ListStudymaterial"
+            android:name="my.upgrade007.upgrade.GetLinksDetails"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ListSyllabus"
+            android:name="my.upgrade007.upgrade.GetSyllabus"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".NewsActivity"
+            android:name="my.upgrade007.upgrade.ListStudymaterial"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".NewsDetails"
+            android:name="my.upgrade007.upgrade.ListSyllabus"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name="my.upgrade007.upgrade.NewsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".GateActivityFirst"
+            android:name="my.upgrade007.upgrade.NewsDetails"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".BlogActivity"
+            android:name="my.upgrade007.upgrade.ForgotPasswordActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MainPage"
+            android:name="my.upgrade007.upgrade.GateActivityFirst"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="my.upgrade007.upgrade.MainPage"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".RegistrationActivity"
+            android:name="my.upgrade007.upgrade.RegistrationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".LoginActivity"
+            android:name="my.upgrade007.upgrade.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name="my.upgrade007.upgrade.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-6308730013109586~9609200473"/>
+            android:value="ca-app-pub-6308730013109586~9609200473" />
+
+        <service
+            android:name="my.upgrade007.upgrade.MessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- Set custom default icon. This is used when no icon is set for incoming notification messages.
+     See README(https://goo.gl/l4GJaQ) for more. -->
+<!--        <meta-data-->
+<!--            android:name="com.google.firebase.messaging.default_notification_icon"-->
+<!--            android:resource="@drawable/upgrade_logo_final" />-->
+
+        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorPrimary" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_path" />
+
+        </provider>
     </application>
 
 </manifest>

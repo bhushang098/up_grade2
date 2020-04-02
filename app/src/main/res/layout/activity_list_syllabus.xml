@@ -6,7 +6,7 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context=".MainActivity">
+    tools:context="my.upgrade007.upgrade.MainActivity">
 
     <include
         layout="@layout/tblayout_of_branches"/>

@@ -36,46 +36,32 @@
                 style="@android:style/Widget.ProgressBar.Small"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="75dp" />
-
+                android:layout_marginTop="85dp" />
 
             <TextView
-                android:id="@+id/publishedAtOfBlogItem"
-                android:layout_width="85dp"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/imgOfBlogitem"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="6dp"
-                android:background="#ffffff"
-                android:padding="5dp"
-                android:singleLine="true"
-                android:text="01 january 1990"
-                android:textColor="#F3201E1E" />
-
-            <ImageView
-                android:id="@+id/ic_dateimg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/imgOfBlogitem"
-                android:layout_marginRight="0dp"
-                android:layout_marginBottom="6dp"
-                android:layout_toStartOf="@+id/publishedAtOfBlogItem"
-                android:layout_toLeftOf="@+id/publishedAtOfBlogItem"
-                android:background="#ffffff"
-                android:padding="2dp"
-                android:src="@drawable/ic_date_range" />
+                android:id="@+id/publishedAtOfBlogItem"
+                android:layout_alignParentRight="true"
+                android:text="! jan 2019"
+                android:textColor="#141212"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/date_back"
+                android:padding="8dp"
+                android:textStyle="bold"
+                android:textSize="16dp"
+               android:layout_alignBottom="@+id/imgOfBlogitem"/>
 
             <TextView
                 android:id="@+id/authorOfBlog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:background="#ffffff"
+                android:background="#D7F8F8FA"
                 android:gravity="center"
+                android:padding="5dp"
                 android:text="Author"
-                android:textStyle="bold"
-                android:textColor="#201E1E"/>
+                android:textColor="#000000"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/titleOfBlogItem"

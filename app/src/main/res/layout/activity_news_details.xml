@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewsDetails"
+    tools:context="my.upgrade007.upgrade.NewsDetails"
     android:background="@color/colorPrimary">
 
     <WebView

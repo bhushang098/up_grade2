@@ -8,4 +8,10 @@
         <item>Year 2016</item>
         <item>Year 2015</item>
     </string-array>
+    <string name="welcomeMess">Hello user UpGrade is Here To help You getting All Things at one Place you need while studying </string>
+
+    <string name="downlaodNav">Find All your Downloaded Files At The Top Right Corner Of This Page</string>
+    <string name="paperNav">Answer Keys Are Appended At The End Of PDF  </string>
+
+    <string name="GotoLoginMess">if you Have previously Logged In To UpGrade Then just Go for LogIn</string>
 </resources>

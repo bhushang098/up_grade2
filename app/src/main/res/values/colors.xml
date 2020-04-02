@@ -5,5 +5,6 @@
     <color name="colorPrimaryDark">#7C1F8C</color>
     <color name="colorBackgroundCard">#E387529F</color>
     <color name="backgroundTheme">#EC28FF</color>
+    <color name="transperent">#14D0B7E7</color>
     <color name="textcokorOncard">#ffffff</color>
 </resources>

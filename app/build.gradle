@@ -37,11 +37,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.upgrade"
+        applicationId "my.upgrade007.upgrade"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.2"
         resConfigs "en"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -66,16 +66,18 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     //fireBase
-    implementation 'com.google.firebase:firebase-ads:18.2.0'
-    implementation 'com.google.firebase:firebase-auth:19.1.0'
+    implementation 'com.google.firebase:firebase-ads:18.3.0'
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.google.firebase:firebase-core:17.2.2'
     implementation 'com.google.firebase:firebase-storage:19.1.0'
-    implementation 'com.google.firebase:firebase-firestore:21.1.1'
+    implementation 'com.google.firebase:firebase-firestore:21.3.1'
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.google.firebase:firebase-messaging:20.1.0'
 
     //design Support
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
@@ -92,7 +94,7 @@ dependencies {
     implementation 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
 
     //ads
-    implementation 'com.google.android.gms:play-services-ads-lite:18.2.0'
+    implementation 'com.google.android.gms:play-services-ads-lite:18.3.0'
 
     //pdf Viewer Support
     implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'

@@ -1,108 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegistrationActivity"
+    tools:context="my.upgrade007.upgrade.RegistrationActivity"
     android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
     <EditText
         android:id="@+id/etUserNmaeReg"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
         android:background="@color/colorAccent"
         android:drawableLeft="@drawable/ic_action_uname"
-        android:ems="10"
+        android:elevation="4dp"
+
         android:hint="   User Name"
         android:inputType="textPersonName"
         android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/etMailReg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        android:layout_below="@+id/imageView2" />
 
     <EditText
         android:id="@+id/etMailReg"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="24dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:background="@color/colorAccent"
         android:drawableLeft="@drawable/ic_action_name"
-        android:ems="10"
         android:hint="  E-Mail ID"
         android:inputType="textEmailAddress"
         android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/etPassReg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etUserNmaeReg" />
+      android:layout_below="@+id/etUserNmaeReg" />
 
     <EditText
         android:id="@+id/etPassReg"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="33dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/colorAccent"
         android:drawableLeft="@drawable/ic_action_pass"
-        android:ems="10"
-        android:hint="Password"
+        android:layout_centerHorizontal="true"
+        android:hint="Create Password"
+        android:layout_below="@id/etMailReg"
         android:inputType="textPassword"
         android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnRegister"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etMailReg" />
+        />
 
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
-        android:background="@color/colorPrimary"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_back"
         android:text="Register"
+        android:layout_below="@+id/checkBoxOfRegister"
+        android:layout_centerHorizontal="true"
         android:textColor="#ffffff"
-        android:textSize="16sp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark"
-        app:layout_constraintBottom_toTopOf="@+id/tvGoLogin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPassReg"
-        app:layout_constraintVertical_bias="1.0" />
+        android:textSize="16sp" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="301dp"
-        android:layout_height="145dp"
+        android:layout_width="306dp"
+        android:layout_height="126dp"
         android:layout_marginTop="70dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+       android:layout_centerHorizontal="true"
         app:srcCompat="@drawable/social" />
 
     <TextView
         android:id="@+id/tvGoLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="28dp"
         android:text="Already user ? Login"
         android:textColor="@color/colorPrimary"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent" />
+      android:layout_below="@id/btnRegister"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/textView3"
@@ -119,5 +108,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <CheckBox
+        android:id="@+id/checkBoxOfRegister"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etPassReg"
+        android:text="Show PassWord" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>
